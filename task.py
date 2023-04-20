@@ -4,22 +4,40 @@
 # Фразы отделяются друг от друга пробелами. Стихотворение  Винни-Пух вбивает в программу с клавиатуры. В ответе напишите “Парам пам-пам”, 
 # если с ритмом все в порядке и “Пам парам”, если с ритмом все не в порядке
 
-poem = str(input("Ввод стихотворения: "))
-phrase = poem.split()
-letter_sum = []
-for words in phrase:
-    count_consonant_letter = 0
-    for letter in words:
-        if letter in ("а",  'у', 'е', 'ы', 'о', 'э', 'я', 'и', 'ю', 'ё'):
-            count_consonant_letter += 1
-    letter_sum.append(count_consonant_letter)
-count = 0
-for i in range (len(letter_sum)):
-    if letter_sum[i] == letter_sum [0]:
-        count += 1
-if len(letter_sum) == count:
-    print("Парам пам-пам")
-else: 
-    print("Пам парам")
+# poem = str(input("Ввод стихотворения: "))
+# phrase = poem.split()
+# letter_sum = []
+# for words in phrase:
+#     count_consonant_letter = 0
+#     for letter in words:
+#         if letter in ("а",  'у', 'е', 'ы', 'о', 'э', 'я', 'и', 'ю', 'ё'):
+#             count_consonant_letter += 1
+#     letter_sum.append(count_consonant_letter)
+# count = 0
+# for i in range (len(letter_sum)):
+#     if letter_sum[i] == letter_sum [0]:
+#         count += 1
+# if len(letter_sum) == count:
+#     print("Парам пам-пам")
+# else: 
+#     print("Пам парам")
 
 
+
+
+# Задача 36: Напишите функцию print_operation_table(operation, num_rows=6, num_columns=6), которая принимает в качестве аргумента функцию, 
+# вычисляющую элемент по номеру строки и столбца. Аргументы num_rows и num_columns указывают число строк и столбцов таблицы, которые 
+# должны быть распечатаны. Нумерация строк и столбцов идет с единицы (подумайте, почему не с нуля). Примечание: бинарной операцией называется 
+# любая операция, у которой ровно два аргумента, как, например, у операции умножения.
+
+def print_operation_table(operation, num_rows, num_columns):
+    table = []
+    for x in range(1, num_rows + 1):
+        for y in range(1, num_columns + 1):
+            table.append(operation(x, y))
+    print(*table)
+
+print_operation_table(lambda x,y: x * y, 6, 6)
+
+            
+           
